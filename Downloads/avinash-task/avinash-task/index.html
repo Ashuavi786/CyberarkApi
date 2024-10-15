@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Page</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">LOGO</div>
+      <nav class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <button class="login-btn">Login</button>
+    </header>
+
+    <div class="container">
+      <div class="tabs">
+        <div class="tab" onclick="showTab(1)">Security</div>
+        <div class="tab" onclick="showTab(2)">Database Permission</div>
+      </div>
+
+      <div id="tab1" class="tab-content">
+        <div class="form-group">
+          <label for="security-code">Security Code</label>
+          <input
+            type="text"
+            id="security-code"
+            placeholder="Enter security code"
+          />
+        </div>
+
+        <div class="form-group radioformgrp">
+          <label>Operation On</label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="operation" value="1" /> Option 1</label
+            >
+            <label
+              ><input type="radio" name="operation" value="2" /> Option 2</label
+            >
+            <label
+              ><input type="radio" name="operation" value="3" /> Option 3</label
+            >
+            <label
+              ><input type="radio" name="operation" value="4" /> Option 4</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dropdown">Select Option</label>
+          <select id="dropdown">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="textarea">Text Area</label>
+          <textarea
+            id="textarea"
+            rows="4"
+            placeholder="Enter text..."
+          ></textarea>
+        </div>
+
+        <button class="custom-upload-btn">Custom Upload</button>
+      </div>
+
+      <div id="tab2" class="tab-content">
+        <!-- <div class="form-group">
+            <label>Check all database permissions on</label>
+            <div class="permission-group">
+                <label><input type="radio" name="permission" value="1"> Option 1</label>
+                <label><input type="radio" name="permission" value="2"> Option 2</label>
+            </div>
+            <button class="help-btn">Get Help</button>
+        </div> -->
+
+        <!-- <div class="form-group">
+            <label for="hostname">Hostname</label>
+            <input type="text" id="hostname" placeholder="Enter hostname">
+        </div> -->
+
+        <div class="form-group">
+          <label for="account-name">Account Name</label>
+          <input
+            type="text"
+            id="account-name"
+            placeholder="Enter account name"
+          />
+        </div>
+
+        <button class="custom-upload-btn">Submit</button>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                        <th>Header 4</th>
+                        <th>Header 5</th>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                        <th>Header 4</th>
+                        <th>Header 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                    </tr>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                    </tr>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                    </tr>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                    </tr>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+      </div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                    <th>Header 4</th>
+                    <th>Header 5</th>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                    <th>Header 4</th>
+                    <th>Header 5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>
+      <div class="container">
+        <p>Copyright @ 2024</p>
+      </div>
+    </footer>
+    <script>
+      function showTab(tabIndex) {
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((tab) => tab.classList.remove("active"));
+        document.getElementById("tab" + tabIndex).classList.add("active");
+      }
+      // By default, show first tab
+      showTab(1);
+    </script>
+  </body>
+</html>
