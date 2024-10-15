@@ -1,0 +1,217 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    background: #8dbdd8;
+    color: white;
+}
+header .logo {
+    font-size: 20px;
+}
+header .menu {
+    display: flex;
+    gap: 20px;
+}
+header .menu a {
+    color: white;
+    text-decoration: none;
+}
+header .login-btn {
+    padding: 10px 15px;
+    background-color: #555;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #4390bc;
+    color: #fff;
+    border:1px solid #fff;
+    
+}
+.container {
+    padding: 20px;
+    max-width:900px;
+    margin: 0px auto;
+    background: #d8e9f3;
+}
+.tabs {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    background: #8dbdd8;
+    padding: 10px;
+}
+.tabs div {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #68a7ca;
+    color: #fff;
+    border:1px solid #fff;
+    border: 0px;
+}
+.tab-content {
+    margin-top: 20px;
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    width:180px;
+    margin-bottom: 0px;
+}
+input[type="text"], input[type="password"], textarea, select {
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    flex:1;
+    max-width: 400px;
+}
+.radio-group, .permission-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.radio-group label, .permission-group label {
+    cursor: pointer;
+}
+.custom-upload-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #68a7ca;
+    color: #fff;
+    border: 1px solid #fff;
+    background: #4390bc;
+    border: 0px;
+   
+}
+.help-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+select {
+    position: relative;
+}
+select:after {
+    content: '⯆';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/*new add*/
+.radio-group label{
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+footer{
+    background: #8dbdd8;
+    padding: 20px;
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+    position: sticky;
+    bottom: 0px;
+}
+footer .container{
+    background: transparent;
+    padding: 0px;
+
+}
+.radioformgrp{
+    display: flex;
+    flex-direction: column;
+}
+.radioformgrp label{
+    margin-bottom: 20px;
+    width: auto;
+}
+
+/*table design*/
+.table-container {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 400px; /* Adjust height for vertical scrolling */
+    border: 1px solid #fff;
+    margin-top: 20px;
+}
+
+/* Basic table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Ensures horizontal scrolling on smaller screens */
+}
+
+/* Table headers */
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+    background: #4390bc;
+    color: #fff;
+    min-width: 100px;
+}
+
+/* Table data */
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+/* Alternate row background color */
+tbody tr:nth-child(even) {
+    background-color: #fff;
+    color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    table {
+        min-width: 100%;
+    }
+}
