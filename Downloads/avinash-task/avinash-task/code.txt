@@ -1,0 +1,156 @@
+import React, { useState } from 'react';
+import './style.css';
+
+const CustomPage = () => {
+  const [activeTab, setActiveTab] = useState(1);
+  const [securityCode, setSecurityCode] = useState('');
+  const [operation, setOperation] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
+  const [textArea, setTextArea] = useState('');
+  const [accountName, setAccountName] = useState('');
+
+  const showTab = (tabIndex) => {
+    setActiveTab(tabIndex);
+  };
+
+  return (
+    <div>
+      <header>
+        <div className="logo">LOGO</div>
+        <nav className="menu">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+        <button className="login-btn">Login</button>
+      </header>
+
+      <div className="container">
+        <div className="tabs">
+          <div className="tab" onClick={() => showTab(1)}>Security</div>
+          <div className="tab" onClick={() => showTab(2)}>Database Permission</div>
+        </div>
+
+        {activeTab === 1 && (
+          <div id="tab1" className="tab-content">
+            <div className="form-group">
+              <label htmlFor="security-code">Security Code</label>
+              <input
+                type="text"
+                id="security-code"
+                placeholder="Enter security code"
+                value={securityCode}
+                onChange={(e) => setSecurityCode(e.target.value)}
+              />
+            </div>
+
+            <div className="form-group radioformgrp">
+              <fieldset>
+                <legend>Operation On</legend>
+                <div className="radio-group">
+                  {[1, 2, 3, 4].map(option => (
+                    <label key={option}>
+                      <input
+                        type="radio"
+                        name="operation"
+                        value={option}
+                        checked={operation === option.toString()}
+                        onChange={() => setOperation(option.toString())}
+                      /> Option {option}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="dropdown">Select Option</label>
+              <select
+                id="dropdown"
+                value={selectedOption}
+                onChange={(e) => setSelectedOption(e.target.value)}
+              >
+                <option value="">Choose an option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="textarea">Text Area</label>
+              <textarea
+                id="textarea"
+                rows="4"
+                placeholder="Enter text..."
+                value={textArea}
+                onChange={(e) => setTextArea(e.target.value)}
+              ></textarea>
+            </div>
+
+            <button className="custom-upload-btn">Custom Upload</button>
+          </div>
+        )}
+
+        {activeTab === 2 && (
+          <div id="tab2" className="tab-content">
+            <div className="form-group">
+              <label htmlFor="account-name">Account Name</label>
+              <input
+                type="text"
+                id="account-name"
+                placeholder="Enter account name"
+                value={accountName}
+                onChange={(e) => setAccountName(e.target.value)}
+              />
+            </div>
+
+            <button className="custom-upload-btn">Submit</button>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                    <th>Header 4</th>
+                    <th>Header 5</th>
+                    <th>Header 6</th>
+                    <th>Header 7</th>
+                    <th>Header 8</th>
+                    <th>Header 9</th>
+                    <th>Header 10</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[...Array(5)].map((_, i) => (
+                    <tr key={i}>
+                      <td>Data {i + 1}</td>
+                      <td>Data {i + 2}</td>
+                      <td>Data {i + 3}</td>
+                      <td>Data {i + 4}</td>
+                      <td>Data {i + 5}</td>
+                      <td>Data {i + 1}</td>
+                      <td>Data {i + 2}</td>
+                      <td>Data {i + 3}</td>
+                      <td>Data {i + 4}</td>
+                      <td>Data {i + 5}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <footer>
+        <div className="container">
+          <p>Copyright @ 2024</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default CustomPage;
