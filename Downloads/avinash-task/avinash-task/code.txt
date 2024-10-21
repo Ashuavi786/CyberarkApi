@@ -154,3 +154,231 @@ const CustomPage = () => {
 };
 
 export default CustomPage;
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #8dbdd8;
+    color: white;
+}
+
+header .logo {
+    font-size: 20px;
+}
+
+header .menu {
+    display: flex;
+    gap: 20px;
+}
+
+header .menu a {
+    color: white;
+    text-decoration: none;
+}
+
+header .login-btn {
+    padding: 10px 15px;
+    background-color: #4390bc;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #d8e9f3;
+}
+
+.tabs {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    background: #8dbdd8;
+    padding: 10px;
+}
+
+.tabs div {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #68a7ca;
+    color: #fff;
+}
+
+.tab-content {
+    margin-top: 20px;
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 20px;
+    width: 180px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+    max-width: 400px;
+}
+
+.radio-group,
+.permission-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.radio-group label,
+.permission-group label {
+    cursor: pointer;
+}
+
+.custom-upload-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #4390bc;
+    color: #fff;
+}
+
+.help-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+select {
+    position: relative;
+}
+
+select:after {
+    content: '⯆';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* New styles */
+.radio-group label {
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+footer {
+    background: #8dbdd8;
+    padding: 20px;
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+}
+
+footer .container {
+    background: transparent;
+    padding: 0;
+}
+
+.radioformgrp {
+    display: flex;
+    flex-direction: column;
+}
+
+.radioformgrp label {
+    margin-bottom: 20px;
+    width: auto;
+}
+
+/* Table design */
+.table-container {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 400px; /* Adjust height for vertical scrolling */
+    border: 1px solid #fff;
+    margin-top: 20px;
+}
+
+/* Basic table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Ensures horizontal scrolling on smaller screens */
+}
+
+/* Table headers */
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #4390bc;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+}
+
+/* Table data */
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+/* Alternate row background color */
+tbody tr:nth-child(even) {
+    background-color: #f4f4f4; /* Changed to a lighter color for better contrast */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    table {
+        min-width: 100%;
+    }
+}
+
