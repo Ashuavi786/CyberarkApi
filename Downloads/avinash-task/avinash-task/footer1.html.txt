@@ -1,0 +1,29 @@
+ <footer>
+
+<div style="z-index: 8888 !important;">
+
+<div class="toolbar3 text-left text-md-Left"> <
+
+div class="footerRow">
+
+<hr class="clearfix w-100 d-md-none pb-3">
+
+</div>
+
+</div>
+
+<div class="toolbar4">
+
+<div class="row" style="padding: 12px 0;">
+
+<span class="copyRightLabel"> Copyright 2022 Barclays. All
+
+rights reserved </span>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>

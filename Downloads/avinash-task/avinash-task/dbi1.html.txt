@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Permission Console</title>
+    <style>
+        .container {
+            margin: 80px auto;
+            max-width: 70%;
+            background-color: #fafafa;
+            padding: 20px;
+            border: 1px solid lightgray;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .form-inline {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .form-inline input[type="text"] {
+            margin: 7px 0;
+            padding: 8px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .radioGroup {
+            margin-top: 10px;
+        }
+
+        .radioGroup input {
+            margin-left: 10px;
+        }
+
+        .table-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid lightgray;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .iconButton img {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" data-ng-controller="dbipermissionController">
+    <div class="header">Quick Access: Database Permissions Console</div>
+
+    <div class="radioGroup">
+        <label><input type="radio" name="operation" value="Oracle" onclick="yesnoCheck()"> Oracle</label>
+        <label><input type="radio" name="operation" value="SQL" onclick="yesnoCheck()"> MS-SQL</label>
+    </div>
+
+    <form class="form-inline">
+        <label>Domain/Account Name</label>
+        <input type="text" id="accountName" placeholder="Enter Account Name">
+
+        <label>Server Name</label>
+        <input type="text" id="serverName" placeholder="Enter Server Name">
+
+        <input type="button" value="Submit" onclick="showTable()">
+    </form>
+
+    <div class="table-container" id="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Account ID</th>
+                    <th>Database Name</th>
+                    <th>Role Name</th>
+                    <th>Instance Name</th>
+                    <th>Object Owner</th>
+                    <th>Object Name</th>
+                    <th>Object Permission</th>
+                    <th>System Permission</th>
+                    <th>Permission Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic content will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <label>Download Entire Report:</label>
+        <input type="image" src="images/download.png" alt="Download" onclick="downloadReport()">
+    </div>
+
+    <label>Items per page:</label>
+    <select id="itemsPerPage" onchange="changeItemsPerPage()">
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+    </select>
+</div>
+
+<script>
+    function yesnoCheck() {
+        // Implement radio button behavior here
+    }
+
+    function showTable() {
+        document.getElementById('table').style.display = 'block';
+    }
+
+    function downloadReport() {
+        alert('Report download triggered!');
+    }
+
+    function changeItemsPerPage() {
+        const items = document.getElementById('itemsPerPage').value;
+        console.log('Items per page changed to:', items);
+    }
+</script>
+
+</body>
+</html>

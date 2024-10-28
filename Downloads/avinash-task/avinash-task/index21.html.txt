@@ -1,0 +1,81 @@
+<html>
+
+<head>
+
+<title></title>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+<link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+
+<link href="css/ngDialog.min.css" rel="stylesheet" />
+<link href="css/ui-grid.min.css" rel="stylesheet" />
+
+<link href="css/ngDialog-theme-default.css" rel="stylesheet" /> 11 <link href="css/ngDialog-theme-plain.min.css" rel="stylesheet" />
+
+<link href="css/bootstrap.-search-min.css" rel="stylesheet" />
+
+<link href="css/angular-Loading.css" rel="stylesheet" type="text/css" />
+
+<link href="css/angular-material.min.css" rel="stylesheet" />
+
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<link rel="stylesheet" type="text/css" href="css/commonCSS.css" /> 18 <link rel="stylesheet" type="text/css" href="css/modelView.css" />
+
+<link rel="stylesheet" type="text/css" href="css/customFont.css" /> 20 <link rel="stylesheet" type="text/css" href="css/customFormCSS.css"/>
+
+<link href="css/dialog-box.css" rel="stylesheet" type="text/css" />
+
+<link href="css/customMultipleTag.css" rel="stylesheet" type="text/css" />
+
+<script src="js/bootstrap.min-4.3.1.js"></script> 24 <script src="js/popper.min-1.14.7.js"></script>
+
+<script src="js/jquery-3.4.1.min.js"></script> 26 <script src="js/autosearch/angular.min.js" data-semver="1.5.5"></script>
+
+<script src="js/tether.min.js"></script> 28 <script src="js/bootstrap-4.0.0-min.js"></script>
+
+<script src="js/angular/angular-Loading.js" type="text/javascript"></scripts
+
+<script src="js/angular-growl.js"></script>
+
+<script src="js/ogDialog.min.js"></script>
+
+<script src="js/angular-spinner.js"></script> 33 <script src="js/angular-route.js"></script>
+
+<script src="js/autosearch/angular-animate.min.js" data-semver="1.5.5"></script>
+
+<script src="js/autosearch/angular-sanitize.min.js" data-semver="1.5.5"></script> <script src="js/autosearch/angular-strap.js" data-semver="v2.3.8"></script>
+<script src="js/autosearch/angular-strap.tpl.js" data-semver="v2.3.8"></script>
+
+<script src="js/autosearch/angular-strap.docs.tpl.js" data-semver="v2.3.8"></scripts
+
+<script src="js/xlsx.full.min.js"></script> 40 <script src="js/angular-js-xlsx.js"></script>
+
+ <script src="js/spin.min.js" data-require "spin.js@1.2.7"></script> 42 <script src="js/ui-bootstrap-tpls-1.0.3.js"></script>
+
+ <script src="js/app.js"></script> 46 <script src="js/Config.js"></script>
+
+ <script src="js/angular-aria.min.js"></script>
+
+ <script src="js/angular-messages.min.js"></script>
+
+<script src="js/angular-material.min.js"></script> 50 <script src="js/ui-grid.min.js"></script>
+
+ <script src="js/dbiPermissionController.js"></script> 52 <script src="js/headerController.js"></script>
+
+ <script src="js/databaseStaticPermission.js"></script>
+
+</head> 55
+
+<body ng-app="dbiPermissions"> 457 <ng-include src=""header2.html"></ng-include>
+
+ </body>
+
+ </html>
