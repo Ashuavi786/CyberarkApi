@@ -1,0 +1,545 @@
+var myApp angular.module('dbiPermissions');
+
+function yesnoCheck(){
+
+if(document.getElementById('oracle').checked) {
+
+document. .getE lementById('userinputsql').style.display = "none";
+
+document. .getElementById(' Id("userinputoracle"). cle").style ).style.display="block";
+
+} if(document.getElementById('mysql').checked) {
+
+}
+
+1
+
+document.getElementById('userinputoracle').style.display = "none"; document.getElementById("userinputsql").style.display="block";
+
+} function showTable(){
+
+document.getElementById("table3").style.display="block"; if(document.getElementById('oracle').checked){ document.getElementById('div6').style.display = "none"; document.getElementById('div1l').style.display = "block";
+
+} if(document.getElementById('mysql').checked){
+
+document.getElementById('div6').style.display = "block"; document.getElementById('div11').style.display = "none";
+
+}
+
+}
+
+myApp
+
+.controller(
+
+*dbiPermissionController',
+
+function($scope, $templateCache, $http, growl, ngDialog, $loading, Stimeout)
+
+{ $scope.userDetail = {}; $scope.DbiPermissionData ={};
+
+$scope.dbiPermissionDataList = [];
+
+$scope.page 1;
+
+$scope.totalCount = 0;
+
+$scope.maxSize = 5;
+
+$scope.itemPerPage = '20';
+
+$scope.reverse = true;
+
+var done TypingInterval = 500;
+
+var typing Timer;
+
+$scope.openDialogue = function() {
+
+$('#ssoDialogue').modal('show');
+
+}
+
+$scope. .viewProfile = function() { window.open('https://onephonebook.barclays.intranet/'); $('#ssoDialogue').modal('hide'); }
+
+$scope.startLoader = function() {
+
+$loading.start('sample-1');
+
+};
+
+$scope.finishLoader = function() $loading.finish('sample-1'); }; {
+
+function getuserdetails() {
+
+var appUrl = "./getUserDetail";
+
+$.ajax({
+
+url: appUrl,
+
+type: 'GET',
+
+async: false,
+
+success: function(data. status. jqxhr) {
+
+if (" " |=data && null i=data && undefined = data) (
+
+success function(data, status, jahr) (
+
+$scope.userDetailsSsODIO data; return $scope.userDetailsssoDTO;
+
+else( $scope.errorFunctionForApplication("red", "An error occurred for 550 user, please try again later", "Images/Reject@2x.png");
+
+), error: function(jaxhr, status, msg) {
+
+$scope.errorFunctionForApplication("red", "An error occurred for 550 user, please try again later", "images/Reject@2x.png"); });
+
+scope.showTableCheck-function(){ $
+
+if((1$scope.table3) || (1$scope.div6))(
+
+Sscope.tables true; $scope.dive true;
+
+$scope.divil false;
+
+Sscope.showTableCheckforOracle function(){
+
+if(!$scope.table3) 11 (15scope,div11)){
+
+Sscope.tables true;
+
+Sscope.divé false; $scope.divi1 true;
+
+$scope.downloadReport
+
+function(){ var servertiane document.getElementById("serverName").value;
+
+var accountfiane document.getElementById("accounttiane").value;
+
+var splitServerfiane serverName.split("\\");
+
+var afterSplitServerName splitServerName[0];
+
+var InstanceName = splitServerName [1];
+
+var SplitInstanceName InstanceName.split("~");
+
+var afterSplitDatabaseName SplitInstanceName[0];
+
+var afterSplitInstanceName SplitInstanceName[1];
+
+var splitAccountName accountName.split("/");
+
+var afterSplitDomainName splitAccountName[0];
+
+var afterSplitAccountName splitAccountName [1];
+
+$scope.error=false;
+
+$scope.startLoader('sample-1');
+
+var urlvar"./generateDbiExcell?serverName="+afterSplitServerName + "&instanceName=" +afterSplitDatabaseName + "&databaseName="+afterSplitInstanceName + "&domainName=" + afterSplitDomainName + "&accountName="+ afterSplitAccountName;
+
+$http({
+
+url:urlvar,
+
+method: "POST", headers: {
+
+'Content-type': 'application/json'
+
+responseType: 'arraybuffer'
+
+}).success(function(data, status, headers, config)
+
+{
+
+var blob new Blob([data]); var link document.createElement('a');
+
+link.href window.URL.createObjectURL(blob);
+
+link.download "DbiPermission.csv";
+
+link.click();
+
+window.URL.revokeObjectURL (link.href);
+
+$scope.finishLoader():
+
+window.URL.revokeObjectURL(link.href);
+
+$scope.finishLoader();
+
+})
+
+error(function (data) (
+
+$scope.errorFunctionForApplication("red", "Some error occured, please try again later",
+
+"images/Reject@2x.png");
+
+Sscope. Invalid Feed=true; Sscope.finishLoader();
+
+));
+
+}
+
+$scope.downloadReportForOracle function(){
+
+var instanceNane document.getElementById("serverNameoracle").value;
+
+var accountName = document.getElementById("accountNameoracle").value;
+
+var splitinstanceName instanceName.split("-");
+
+var afterSplitDatabasehane splitinstanceName[0 ]; var afterSplitinstanceName splitInstanceName[1];
+
+$scope.error-false;
+
+$scope.startLoader (sample-1");
+
+var urlvar="./generate biExcelForOracle?databaseName="+afterSplitDatabaseName "BinstanceName" afterSplitInstanceNane "&accountName="+accountName;
+
+$http({
+
+url:urlvar,
+
+method: "POST",
+
+headers:
+
+'Content-type': 'application/json"
+
+},
+
+
+responseType: 'arraybuffer'
+
+
+responseType: 'arraybuffer'
+
+}).success (function(data, status, headers, config) {
+
+var blob new Blob([data]); var link document.createElement('a');
+
+link.href window.URL.createObjectURL(blob);
+
+link.download "DbiPermission.csv";
+
+link.click();
+
+window.URL.revokeObjectURL(link.href);
+
+$scope.finishLoader();
+
+}) .error(function (data) {
+
+$scope.errorFunctionForApplication('red', "Some error occured, please try again later", "images/Reject@2x.png");
+
+$scope.invalidFeed=true; $scope.finishLoader();
+
+});
+
+} $scope.loadData = function(){
+
+$scope.startLoader();
+
+$timeout(
+
+function() { $scope.loadDataSql(); ), 2);
+
+$scope.loadDataSql = function(){
+
+var serverName
+
+var accountName = "";
+
+serverName = document.getElementById("serverName").value; accountName = document.getElementById("accountName").value;
+
+var splitServerName = serverName.split("\\");
+
+var afterSplitServerName splitServerName[0];
+
+var InstanceName splitServerflame [1];
+
+if(InstanceName=="" || typeof (InstanceName)--"undefined" || typeof(InstanceName)==null){ Sscope.finishLoader(sample-1');
+
+$scope.alertFunction("orange", "Invalid Input. Please hover on hostliane or take help fron
+
+Get help button", "images/exclamation-circle anticon@lx.png")
+
+}else{
+
+var SplitInstanceName Instancellame.split("-"); var afterSplitDatabaseName SplitInstanceName[0];
+
+var afterSplitInstanceName SplitInstanceName[1];
+
+if(typeof(afterSplitInstanceName)=="undefined" || typeof(afterSplitInstanceName)++null || afterSplitInstanceName = ""
+
+afterSplitInstanceName="";
+
+} var splitAccountName accountName.split("/");
+
+if(splitAccountName.length <2){ var afterSplitDomainName="";
+
+var afterSplitAccountName splitAccountName[0];
+
+else
+
+var afterSplitDomainName splitAccountName[e];
+
+var afterSplitAccountName splitAccountName [1];
+
+)
+
+console.log(afterSplitDomainName); console.log(afterSplitAccountName);
+
+if (typeof(afterSplitServerName)--"undefined" || typeof(afterSplitServerName)= null || afterSplitServerName"){
+
+$scope.finishLoader('sample-1');
+
+$scope.alertFunction('orange', "Invalid Input. Please hover on Hosthane or take help from
+
+Get help Button", "images/exclamation-circle anticon@1x.png");
+
+else if(typeof(afterSplitDatabaseName)--"undefined" || typeof(afterSplitDatabaseName)= null || afterSplitDatabasefiane){
+
+
+Sscope.finishLoader (sample-1');
+
+$scope.alertFunction('orange', "Invalid Input. Please hover on Hostlane or take help from Get help Button", "images/exclama
+
+else if(typeof(afterSplitAccountliame)== "undefined" || typeof(afterSplitAccountiane)--null || afterSplitAccountName||
+
+typeof (afterSplitDomaintiame)=="undefined" || typeof(afterSplitDomainName)= null || afterSplitDomainName") (
+
+$scope.finishLoader('sample-1");
+
+$scope.alertFunction("orange", "Invalid Input. Please hover on Domain/Account Name or take help from Get help Button", "inap
+
+Jelse (
+
+var urlite/dbipermission?serverflame="afterSplitServerflame "Binstanceflame
+
++afterSplitDatabaseName "&databasefiame"+afterSplitInstancefiane "&domainName" afterSplitDomaintiane "Baccountliane="+
+
+$.ajax({
+
+url: urlitr,
+
+type: 'GET', async: false,
+
+dataType: 'json',
+
+contentType: application/json',
+
+data,
+
+success: function(dataltr, status, jokhr) (
+
+if (dataltr ) (
+
+$scope.showTableCheck();
+
+$scope.dbiPermissionDatalist dataltr;
+
+$scope.totalCount $scope.dbipermissionDatalist.length;
+
+$scope.finishLoader('sample-1');
+
+return $scope.dbiPermissionDataList;
+
+}else{ $scope.finishLoader("sample-1");
+
+$scope.dbiPermissionDatalist =[];
+
+$scope.alertFunction("orange", "No Records Found", "images/exclamation-circle anticon@ix.png");
+
+}},
+
+
+error: function(jqxhr, status, msg) ( $scope.errorFunctionForApplication ('red', "Some error occured, please
+
+try again later", "images/Reject@2x.png");
+
+$scope.finishLoader('sample-1');
+
+}); }
+
+$scope.loadDataOracle function(){
+
+$scope.startLoader ();
+
+Stimeout( function() {
+
+$scope.loadDataora(); ), 2);
+
+$scope.loadDataora function(){
+
+instanceName document.getElementById("serverNameoracle").value;
+
+accountName document.getElementById("accountNameoracle").value;
+
+var instanceName"";
+
+var accountName = "";
+
+var splitinstanceName instanceName.split("-");
+
+$scope.finishLoader('sample-1');
+
+$scope.alertFunction("orange", "Invalid Input. Please hover on HostName or anticon@ix.png"); take help from Get help Button", "images/exclamation-circle
+
+if(instanceName || typeof(accountName)=="undefined" || typeof (accountName)==null) {
+
+var afterSplitDatabaseName splitInstanceName[0];
+
+var afterSplitInstanceName splitInstanceName[1];
+
+if(afterSplitDatabaseliame || typeof(afterSplitDatabaseName)"undefined" || typeof(afterSplitDatabaseName)--null) ( $scope.finishLoader('sample-1');
+
+Sscope.alertFunction('orange', "Invalid Input. Please hover on HostName or take help Get help Button", "images/exclamation-circle anticon@tx.png"); fros
+
+else if(afterSplitInstancellane *|| typeof(afterSplitinstanceName)--"undefined" || typeof(aftersplitInstanceName)==null){
+
+Sscope, finishLoader('sample-1'); Sscope.alertFunction("orange", "Invalid Input. Please hover on Hostlane or take help from Get help Button", "inages/exclamation-circle anticon@ix.png");
+
+else ""|| typeof(accountName)"undefined" || typeof(accountName)==null) (
+
+if(accountflame Sscope.finishLoader('sample-1');
+
+take help $scope.alertFunction("orange", "Invalid Input. Please haver on Account Name or from Get help Button", "images/exclamation-circle- anticonix.png");
+
+else{ var urlItr./dbiPermissionOracle)databasefiame"afterSplit Databasefiane "äinstanceName"
+
+afterSplitInstanceNane "BaccountName"accounthame
+
+$.ajax({
+
+url: urlitr, type: 'GET',
+
+async false, dataType: json',
+
+contenttype application/json',
+
+data:
+
+success function(datalte, status, jqxhr)[
+
+1f(dataitr
+
+Sscope.showTableCheckForOracle();
+
+Sscope.dbiPermissionDatalist dataltr;
+
+$scope.totalCount Sscope.dbiPermissionDataList.length;
+
+$scope.finishLoader("sample-1");
+
+else( )
+
+return $scope.dbiPermissionDataList;
+
+Sscope.finishLoader('sample-1');
+
+$scope.dbipermissionDataList = []; $scope.alertfunction('orange", "No Records", "images/exclamation-circle anticon@tx.png");
+
+error
+
+function(jqxhr, status, nsg) (
+
+$scope.errorFunctionforApplication("red", "Some error occured, please try again later","images/Reject@2x.p
+
+}); }
+
+Sscope.finishtoader('sample-1");
+
+function search function(){
+
+$scope.page 15 loadData();
+
+1 $scope.headerSearch function(val){
+
+clearTimeout(typingTimer); if(val.length 2 || val.length(
+
+typingTimer setTimeout(searchFunction, doneTypingInterval);
+
+Sscope.headerSort function(col) (
+
+$scope.column col;
+
+if ($scope.reverse) ( Sscope.reverse false;
+
+$scope.reverseclass. arrowDown';
+
+$scope.reverse = true; ) else (
+
+$scope.reverseclass 'arrowUp';
+
+}
+
+$scope.page $scope.page+ 1; $scope.page $scope.page 1;
+
+$scope.getSortClass = function(col) (
+
+col) { if ($scope.reverse) { if ($scope.column return arrowDown'; } else { return arrowup"; } } else ( return; }
+
+$scope.alertFunction-function(theme,comment, image)
+
+$scope.alertImage image;
+
+$scope.alert Theme theme;
+
+$scope.alertMessage comment;
+
+$('#alertDialog').modal ((backdrop: 'static', keyboard: true, show: true -});
+
+};
+
+$ scope.errorFunctionForApplication function(theme, comment, image) (
+
+$scope.alertImage image;
+
+$scope.alertTheme = theme;
+
+$scope.alertMessage = comment;
+
+$('#alertDialog').modal((backdrop: 'static', keyboard: true, show: true });
+
+);
+
+$scope.errorFunctionForApplication function(theme, comment, image) {
+
+$scope.alertImage = image;
+
+$scope.alert Theme theme;
+
+$scope.alertMessage = comment;
+
+$("#errorDialog*).modal({
+
+backdrop: 'static', keyboard: true,
+
+show: true
+
+});
+
+}
+
+$scope. $scope.closeErrorModal function() { $('#errorDialog').modal('hide'); }
+
+getuserdetails();
+
+window.parent.unloader();
+
+
+
+
+
+
+
+
+
+

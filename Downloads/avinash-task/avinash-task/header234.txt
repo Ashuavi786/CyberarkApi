@@ -1,0 +1,158 @@
+
+
+<style>
+
+.no-js #loader {display: none;)
+
+js #loader (display: block; position: absolute; left: 100px; top: 0;)
+
+se-pre-con ( position: fixed;
+
+left: 0px;
+
+top: 0px;
+
+width: 100%; height: 100%;
+
+z-index: 9999;
+
+background: url(images/Preloader.gif) center no-repeat #fff;
+
+container-menu-bot (
+
+width:100%;
+
+box-shadow: ee 4px rgba(65, 65, 65, 0.35); background-color: #003956;
+
+position: fixed; height:70px;
+
+margin: 2px 0px 0px 0px;
+
+z-index: 5;
+
+</style> <div
+
+1
+
+data-ng-controllers "headerController" style="z-index: 8888 limportant;">
+
+<div>
+
+<div class="container-menu-bot">
+
+<div class="container" style="width: 100% limportant">
+
+<1--<div class="container">-->
+
+div class="col-20"> <
+
+<img src="images/Barclays_digital_logo.png" class="blogo">
+
+</div> <span class="v1"></span>
+
+<div>
+
+<nd-tabs md-dynamic-height md-border-bottom md-no-ink md-selected="selectedTabIndex">
+
+<md-content>
+
+<nd-tab> ca ng-click="showObiPermissionsMenu(); openPage("dbiPermissions");">
+
+
+<img src="images/DAP Icon.png" class="dapicon"><span class="headname">DBI Permissions</span></a>
+
+</md-tab> <md-tab>
+
+<a ng-click="openPage('databaseStaticPermission');" onclick="" style="margin-left:10px;"> <img src="images/DAP Icon.png" class="dapicon"><span class="headname">DB Static Permission</span></a>
+
+</md-tab>
+
+</nd-tabs>
+
+</md-content> </div>
+
+<div class="col-20 header-last-menu"> <span class="2"></span>
+
+<1--cing class="bellicon" src="images/Bell@2x.png"> <img class="groupsicon" src="images/Group 5@2x.png">-->
+
+<img class="ssoimage" src="images/favicon.ico"> <span class="sso">((userDetailsSsoOTO.adId))</span>
+
+</div>
+
+<span class="sso-dialog"><img src="images/arrow-216-256.png" class="arrowdownicon" ng-click="openDialogue()"></span
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container toolbarth" data-ng-show="displayloggingMonitoringMenu"> <
+
+div class="col-20">
+
+<img src="images/IAM Logo.png" class="ilogo">
+
+</div>
+
+div class="col-Be menu-header-right-menu">
+
+< class="horizontal-menu" style="padding: 20px 0 240px;" ng-click="openPage('loggingMonitoring")"> mpan ng-class="activeTab== loggingMonitoring 'name selected': 'name'" class="name">Dashboard</span></a>
+
+</div>
+
+</div>
+
+div ide"ssoDialogue" class="modal" style="z-index: 9999; opacity: 1;"> <
+
+<div class="divsso">
+
+<div class="divisso"> <img class="ssoprofileImage" src="images/favicon.ico">
+
+</div> div class="div2sso">
+
+< <div style="padding: 1%">
+
+I
+
+<div style="padding: 1%">
+
+<span class="userprofile-username">((userDetailsSsoDTO.adId)}</span><br>
+
+</div> <div style="padding: 00 1% 1%;">
+
+<span class="userprofile-org">{{userDetailsSsoDTO.orgUnit)}</span><br>
+
+</div> <div>
+
+<button class="view-profile-button" ng-click="viewProfile()">
+
+<span style="font-size: 0.50em;">View Profile</span>
+
+</button>
+
+</div>
+
+</div> </div>
+
+<div class="disclaimer">*will take you to your phone book</div>
+
+<!--<div class="horLine"></div>-->
+
+< div class="div3sso">
+
+<div style="margin: 2px 0px;">BRID: ((userDetailsSsoDTO.brid)}</div>
+
+</div>
+
+</div>
+
+<div ng-view=""></div>
+
+<div>
+
+</div>
+
+<ng-include src="footer2.html"></ng-include>
+
+</div>
