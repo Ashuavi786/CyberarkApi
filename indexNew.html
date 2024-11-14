@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cyberArkApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberArk Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="TabController as tabCtrl">
+
+    <h1>CyberArk Information</h1>
+
+    <!-- Main Tabs -->
+    <div class="main-tabs">
+        <button ng-click="tabCtrl.setTab(1)">Account Info</button>
+        <button ng-click="tabCtrl.setTab(2)">Safe Info</button>
+    </div>
+
+    <!-- Account Info Content -->
+    <div ng-show="tabCtrl.isTab(1)">
+        <h2>Account Info</h2>
+        <p>Details about the account will be displayed here.</p>
+        <!-- Example content -->
+        <div>{{ accountInfo }}</div>
+    </div>
+
+    <!-- Safe Info Content with Subtabs -->
+    <div ng-show="tabCtrl.isTab(2)">
+        <h2>Safe Info</h2>
+
+        <!-- Subtabs for Safe Info -->
+        <div class="sub-tabs">
+            <button ng-click="tabCtrl.setSubTab(1)">Safe Details</button>
+            <button ng-click="tabCtrl.setSubTab(2)">Safe Member Details</button>
+        </div>
+
+        <!-- Safe Details Content -->
+        <div ng-show="tabCtrl.isSubTab(1)">
+            <h3>Safe Details</h3>
+            <p>Details about the safe will be displayed here.</p>
+            <!-- Example content -->
+            <div>{{ safeDetails }}</div>
+        </div>
+
+        <!-- Safe Member Details Content -->
+        <div ng-show="tabCtrl.isSubTab(2)">
+            <h3>Safe Member Details</h3>
+            <p>Details about safe members will be displayed here.</p>
+            <!-- Example content -->
+            <div>{{ safeMemberDetails }}</div>
+        </div>
+    </div>
+
+</body>
+</html
