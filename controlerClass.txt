@@ -1,0 +1,69 @@
+package com.macvault.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000")
+public class CyberArkController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(CyberArkController.class);
+
+    @Autowired
+    private CyberArkAccountInfoDetails cyberArkAccountInfoDetails;
+
+    // Endpoint to get account info
+    @RequestMapping(value = "/account", method = RequestMethod.GET)
+    public @ResponseBody List<AccountInfoDTO> getAccountInfo(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            @RequestParam String accountId) {
+        
+        List<AccountInfoDTO> result = new ArrayList<>();
+        try {
+            result = cyberArkAccountInfoDetails.getAccountInfo(accountId);
+        } catch (Exception e) {
+            LOGGER.error("Error retrieving account info", e);
+        }
+        return result;
+    }
+
+    // Endpoint to get safe info
+    @RequestMapping(value = "/safe", method = RequestMethod.GET)
+    public @ResponseBody SafeInfoDTO getSafeInfo(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            @RequestParam String safeName) {
+        
+        SafeInfoDTO safeInfo = null;
+        try {
+            safeInfo = cyberArkAccountInfoDetails.getSafeInfo(safeName);
+        } catch (Exception e) {
+            LOGGER.error("Error retrieving safe info", e);
+        }
+        return safeInfo;
+    }
+
+    // Endpoint to get safe members
+    @RequestMapping(value = "/safe-members", method = RequestMethod.GET)
+    public @ResponseBody List<MemberInfoDTO> getSafeMembers(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            @RequestParam String safeName) {
+        
+        List<MemberInfoDTO> members = new ArrayList<>();
+        try {
+            members = cyberArkAccountInfoDetails.getSafeMembers(safeName);
+        } catch (Exception e) {
+            LOGGER.error("Error retrieving safe members", e);
+        }
+        return members;
+    }
+}
