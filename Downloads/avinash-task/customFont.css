@@ -1,0 +1,59 @@
+
+@charset "ISO-8859-1";
+
+@font-face {
+
+font-family: ExpertSans-Bold;
+
+src: url(../fonts/ExpertSans-Bold.ttf) format('truetype'),
+
+url('../fonts/expertsans-bold.eot?#iefix') format('embedded-opentype'),
+
+url('../fonts/expertsans-bold.woff') format('woff'), /fonts/expertsans-bold.svg#ExpertSansBold') format('svg');
+
+@font-face {
+
+font-family: ExpertSans-BoldItalic;
+
+src: url(../fonts/ExpertSans-BoldItalic.ttf) format('truetype'),
+
+url('../fonts/expertsans-bolditalic.eot?#iefix') format('embedded-opentype'),
+
+url('../fonts/expertsans-bolditalic.woff ') format('woff'), url('../fonts/expertsans-bolditalic.svg#ExpertSansBoldItalic') format('svg');
+
+}
+
+@font-face {
+
+font-family: ExpertSans-Light;
+
+src: url(../fonts/ExpertSans-Light.ttf) format('truetype'), url('../fonts/expertsans-Light.eot?#iefix') format('embedded-opentype'),
+
+url('../fonts/expertsans-Light.woff') format('woff'),
+
+url('../fonts/expertsans-Light.svg#ExpertSansLight ') format('svg');
+
+} @font-face {
+
+font-family: Expert Sans-LightItalic;
+
+src: url(../fonts/ExpertSans-LightItalic.ttf) format('truetype'), url('../fonts/expertsans-Lightitolic.eot?#iefix') format('embedded-opentype"),
+
+url('../fonts/expertsans-Lightitalic.woff') format('woff'), url('../fonts/expertsans-Lightitalic.svg#ExpertSansLightItalic') format('svg');
+
+@font-face (
+
+font-family: Expert Sans-Regular; src
+
+: url(../fonts/ExpertSans-Regular, ttf) format('truetype'), url('../fonts/expertsans-regular.eot?#iefix') format('embedded-opentype'),
+
+url('../fonts/expertsans-regular.woff') format('woff'),
+
+url('../fonts/expertsuns regulor, svg#Expert SansRegular') format('svg');
+
+font-face (
+
+font-family: Expert Sans RegularItalic; src: url(../fonts/ExpertSans-RegularItalic.ttf) format('truetype');
+}
+
+

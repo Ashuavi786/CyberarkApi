@@ -1,0 +1,197 @@
+.mat-dialog-container {
+
+display: block;
+
+padding: 24px;
+
+border-radius: 4px;
+
+box-sizing: border-box;
+
+overflow: auto;
+
+outline: 0;
+
+width: 100%;
+
+height: 100%;
+
+min-height: inherit;
+
+max-height: inherit;
+
+padding: 10px;
+
+}
+
+.divSso {
+
+box-sizing: border-box;
+
+z-index: 1000;
+
+display: flex;
+
+width: 288px;
+
+height: 140px;
+
+position: static;
+
+margin-left: 78%;
+
+margin-top: 55px;
+
+background-color: #FFFFFF;
+
+padding: 10px;
+
+border-radius: 2%;
+
+I
+
+}
+
+.div1sso {
+
+width: 22%;
+
+float: left;
+
+left: 78%;
+
+padding: 5px;
+
+height:35%;
+
+}
+
+.div2sso {
+
+width: 68%;
+
+float: right;
+
+padding: 10px;
+
+height: 35%;
+
+}
+
+.div3sso {
+
+position: inherit;
+
+top: 152px;
+
+font-family: ExpertSans-Regular;
+
+font-size: 0.80em;
+
+color: #00395D;
+
+letter-spacing: 0;
+
+line-height: 1.8em;
+
+left: 78%;
+
+padding: 1%;
+
+}
+
+.horLine {
+
+border: 1px solid rgb(229, 235, 238); 1
+
+height: 1px;
+
+position: relative;
+
+top: 23%;
+
+}
+
+.disclaimer {
+
+font-family: ExpertSans-BoldItalic;
+
+font-size: 0.55em;
+
+color: #f5a623;
+
+letter-spacing: 0;
+
+margin-top: 5px;
+
+}
+
+view-profile-button { border-radius: 0.32em;
+
+background: #0076b6;
+
+font-family: ExpertSans-Bold;
+
+color: #ffffff;
+
+letter-spacing: 0px;
+
+width: 3.8em;
+
+height: 1.4em;
+
+text-align: center;
+
+cursor: pointer;
+
+border: none;
+
+display: grid;
+
+I
+
+}
+
+.userprofile-org {
+
+font-family: ExpertSans-Regular;
+
+font-size: 0.75em;
+
+color: #001600;
+
+letter-spacing: 0;
+
+line-height: 1.5em;
+
+}
+
+.userprofile-username {
+
+font-family: ExpertSans-Bold;
+
+font-size: 0.85em;
+
+color: #00395d;
+
+letter-spacing: 0;
+
+}
+
+ssoProfileImage {
+
+border-radius: 2.5px;
+
+width: 55px;
+
+margin-right: 10px;
+
+}
+
+height: 55px;
+
+::ng-deep.mat-dialog-container {
+padding: 10px;
+
+}
+

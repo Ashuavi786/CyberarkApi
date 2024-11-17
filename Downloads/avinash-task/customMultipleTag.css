@@ -1,0 +1,76 @@
+.chip {
+
+display: inline-block;
+
+padding: 0px 25px;
+
+height: 25px; background: #D1ECF5;
+
+border-radius: 99px; font-family: ExpertSans-Light;
+
+font-size: 11px;
+
+color: #007686;
+
+letter-spacing: 0;
+
+line-height: 24px;
+
+margin: 4px;
+
+}
+
+.chip a {
+
+float: left;
+
+}
+
+.closebtn {
+
+padding-left: 10px;
+
+color: #888; font-weight: bold;
+
+float: right; font-size: 20px;
+
+cursor: pointer;
+
+}
+
+.closebtn:hover { color: #000;
+
+}
+
+.tags-ufile (
+
+float: right; background: #F2FBFE;
+
+border-radius: 4px; margin-left: 10px;
+
+/* height: 34px; */
+
+
+min-width: 0; max-width: 670px; overflow: auto;
+
+} .tags {
+
+float: left; background: #F2FBFE; border: 1px solid #007686; border-radius: 4px; margin-left: 10px; height: 34px; min-width: 0; max-width: 670px; overflow: auto;
+
+.tags1 {
+
+float: left;
+
+/* background: #F2FBFE; */ / border: 1px solid #007686; */
+
+border-radius: 4px; /* margin-left: 10px; */
+
+/ height: 34px; */
+
+min-width: 0; max-width: 670px;
+
+overflow: auto;
+
+}
+
+

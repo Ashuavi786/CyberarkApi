@@ -1,0 +1,263 @@
+
+@charset "ISO-8859-1";
+
+#FEEDForm {
+
+font-family: ExpertSans-Regular !important;
+
+font-size: 16px;
+
+color: #003950;
+
+left: 50px;
+
+top: 25px;
+
+position: absolute;
+
+#FEEDForm input[type=text]{
+
+width: 444px;
+
+height: 34px;
+
+padding: 5px 10px;
+
+border: 1px solid #BFBFBF;
+
+border-radius: 3px;
+
+background: #FFFFFF;
+
+I
+
+}
+
+#FEEDForm input[type=file]{
+
+border: 1px solid #007666;
+
+height: 25px; border-radius: 100px;
+
+margin: 2px 0;
+
+width: 95px;
+
+display: inline-block;
+
+overflow: hidden;
+
+-webkit-box-sizing: border-box;
+
+-moz-box-sizing: border-box;
+
+box-sizing: border-box;
+
+background: url(../images/upload-3-256.png) center center no-repeat #007656;
+
+background-size: 18px 16px;
+
+cursor: pointer;
+
+padding: 25px 0 0 0;
+
+#FEEDForm input[type=text](
+
+border: 1px solid #06EAFB;
+
+height: 34px;
+
+border-radius: 100px;
+
+margin-left: 10px;
+
+width: 110px;
+
+display: inline-block;
+
+overflow: hidden;
+
+-webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+
+box-sizing: border-box;
+
+background: url(../images/upload-3-256.png) center center no-repeat #06EAF8;
+
+background-size: 25px 21px; padding: 34px 0 0 0;
+
+#FEEDForm input[type-file]:focus( outline: none;
+
+box-shadow: none;
+
+#FEEDForm textarea {
+
+}
+
+width: 800px;
+
+height: 34px; padding: 5px 10px;
+
+border: 1px solid #BFBFBF;
+
+border-radius: 4px;
+
+background: #FFFFFF;
+
+#FEEDform input[type-date] [
+
+width: 325px;
+
+height: 34px; line-height: 36px;
+
+padding: 4px 10px;
+
+background: #FFFFFF;
+
+border: 1px solid #BFOFOF;
+
+border-radius: 3px 0 0 3px;
+
+|*Style the label to display next to the inputs*/
+
+#FEEDForm label {
+
+display: inline-block; margin: unset important;
+
+width: 110%;
+
+font-family: ExpertSans-Regular!important;
+
+font-size: 16px;
+
+color: #00395D;
+
+/* height: 200px;
+
+width: 330px; */
+
+/* Style the submit button */
+
+#FEEDForm input[type=button] {
+
+background-color: #0076B6;
+
+color: white;
+
+border: none;
+
+border-radius: 100px;
+
+cursor: pointer;
+
+/* float: right; */
+
+width: 110px;
+
+font: 14px ExpertSans-Light !important;
+
+}
+
+height: 30px;
+
+#FEEDForm input[type=button]:hover { background: #005E91;
+
+}
+
+#FEEDForm input[type=button]:active { background: #00395D !important; I }
+
+/* Style the container */
+
+#FEEDForm.container ( margin: unset;
+
+padding: unset;
+
+}
+
+#FEEDForm LeftColumn (
+
+float: left;
+
+width: 50%;
+
+}
+
+#FEEDForm.rightColumn {
+
+float: right;
+
+width: 50%;
+
+CommonConstants.j...
+
+}
+
+/* Floating column for labels: 25% width */
+
+#FEEDForm.col-25 {
+
+margin-top: 35px;
+
+}
+
+/* Floating column for inputs: 75% width */
+
+#FEEDForm.col-75 {
+
+margin-top: 15px;
+
+}
+
+#FEEDForm.col-75-1 {
+
+/* margin-top: 15px; */
+
+}
+
+#FEEDForm.col-100 {
+
+float: left; width: 100%;
+
+margin-top: 15px;
+
+/* #FEEDForm.formContainerLable {
+
+font-family: ExpertSans-Bold;
+
+font-size: 18px; color: #007686;
+
+#FEEDForm.formlable (
+
+font-family: ExpertSans-Light;
+
+font-size: 16px;
+
+color: #003950;
+
+/Clear floats after the columns/
+
+#FEEDForm row:after ( content:"";
+
+display: table;
+
+clear: both;
+}
+
+@media screen and (max-width: 600px) (
+
+.col-25, .col-75, input[type=submit] {
+
+width: 100%;
+
+margin-top: 0;
+
+}
+
+}
+
+# FEEDForm input[type=button]:focus {
+
+outline: 8 auto -webkit-focus-ring-color;
+
+}
+
+

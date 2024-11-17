@@ -1,0 +1,919 @@
+div6-mainTable { top: 430px !important; }
+
+.div6 { /*position: absolute; */ margin-top: 10px;
+
+background-color: #fafafa;
+
+width: 100%;
+
+height: 40px;
+
+}
+
+div6-mainTable { .
+
+position: absolute;
+
+top: 75%;
+
+background-color: #fafafa;
+
+width: 100%;
+
+height: 5%;
+
+}
+
+-div6-modal-table {
+
+position: absolute;
+
+top: 75%;
+
+width: 100%;
+
+height: 5%;
+
+divía (
+
+position: absolute;
+
+top: 92%;
+
+background-color: #fafafa;
+
+width: 100%; height: 40px;
+
+padding-left: 210px;
+
+
+}
+
+
+
+.div7 {
+
+display: inline;
+
+float: left; height: 40px;
+
+padding: 10px;
+
+}
+
+display: inline; float: left;
+
+.div7-modal-table { height: 40px; padding: 10px 10px 10px 2%; }
+
+.div7a { display: inline; float: left; height: 40px; padding-left: 210px;
+
+}
+
+.div8 ( display: inline; float: right; height: 40px; position: relative; }
+
+.div8-modal-table { display: inline; float: right; height: 40px;
+position: relative;
+ padding-right: 2%;
+
+.div9 { display: inline; float: right; width: 380px; }
+
+.divle { position: relative; float: left; width: max-content; margin: 10px; }
+
+div11-mainTable { top: 430px limportant; }
+
+.div11 ( /*position: absolute; */ margin-top: 10px; background-color: #fafafa; width: 100%; height: 40px;
+
+}
+
+div11-mainTable { position: absolute; top: 75%; background-color: #fafafa
+
+width: 100%;
+
+height: 5%;
+
+}
+
+.div11-modal-table {
+
+position: absolute;
+
+top: 75%;
+
+width: 100%;
+
+height: 5%;
+
+}
+
+.divlla {
+
+position: absolute;
+
+top: 92%;
+
+background-color: #fafafa;
+
+width: 100%;
+
+height: 40px;
+
+padding-left: 210px;
+
+}
+
+div12 {
+
+display: inline;
+
+float: left;
+
+height: 40px;
+
+padding: 10px;
+
+div12-modal-table {
+
+display: inline;
+
+float: left;
+
+height: 40px;
+
+padding: 10px 10px 10px 2%;
+}
+
+div12a { .
+
+display: inline; float: left; height: 40px; padding-left: 210px; }
+
+.div13 { display: inline; float: right; height: 40px; position: relative; }
+
+.div13-modal-table {
+
+display: inline; float: right; height: 40px; position: relative; padding-right: 2%; }
+
+.div14 { position: relative; float: left; width: max-content; margin: 10px;
+
+}
+
+lable1 { } font: 15.5px ExpertSans-Bold limportant;
+
+}
+
+.lable2 {
+
+margin-bottom: 17px !important;
+
+font: 350 12px Tahoma, Arial, Helvetica, sans-serif !important;
+
+vertical-align: middle;
+
+font-family: ExpertSans-Regular;
+
+font-size: 14px;
+
+font-weight: normal;
+
+}
+
+.lable3 {
+
+font-family: ExpertSans-Regular;
+
+font-size: 14px;
+
+font-weight: normal;
+
+}
+
+.inputSearch {
+
+background: #fafafa;
+
+border: 1px solid rgb(250, 250, 250);
+
+border-radius: 5px;
+
+font: 300 12px/17px Tahoma, Arial, Helvetica, sans-serif;
+
+color: rgba(0, 0, 0, 0.87);
+
+letter-spacing: 0;
+
+line-height: 20px;
+
+background-position: no-repeat right;
+
+margin: 0;
+
+padding: 8px 5px 8px 10px;
+
+inputDate {
+
+border: none;
+
+background: transparent;
+
+}
+
+.inputCheckBox {
+
+top: 10px !important;
+
+left: 5px limportant;
+
+}
+
+.select1 {
+
+width: 170px;
+
+height: 25px;
+
+background: #FFFFFF;
+
+border: 1px solid #BFBFBF;
+
+border-radius: 3px;
+
+font-family: ExpertSans-Light;
+
+font-size: 13px;
+
+color: #00395D;
+
+outline: none;
+
+box-shadow:none;
+
+.select2 {
+
+border: none;
+
+background: transparent;
+
+border-radius: 5px;
+
+font: 400 12px/20px Tahoma, Arial, Helvetica, sans-serif;
+
+color: rgba(0, 0, 0, 0.87);
+
+letter-spacing: 0;
+
+line-height: 20px;
+
+background-position: no-repeat right;
+
+cursor: pointer;
+
+}
+
+.select3 (
+
+margin: -3px 5px;
+
+height: 25px;
+
+background: #FFFFFF;
+
+border: 1px solid #BFBFBF;
+
+border-radius: 3px; I
+
+font-family: ExpertSans-Light;
+
+font-size: 14px; color: #003950;
+
+}
+
+.select4 {
+
+width: 110px !important;
+
+font: 350 12px Tahoma, Arial, Helvetica, sans-serif limportant;
+
+vertical-align: middle;
+
+cursor: pointer;
+
+border: none;
+
+background: transparent
+
+.select5 {
+
+width: 41px;
+
+font: 12px Tahoma, Arial, Helvetica, sans-serif limportant;
+
+cursor: pointer;
+
+border-top: none;
+
+border-left: none; border-right: none;
+
+border-color: black;
+
+}
+
+..iconButton {
+
+background: transparent;
+
+border: none;
+
+margin: 2px 0 0 -6px;
+
+}
+
+.tableHeader {
+
+background: transparent;
+
+border: none;
+
+min-width: 120px;
+
+text-overflow: ellipsis;
+
+white-space: nowrap;
+
+text-align: left;
+
+padding: 5px 5px 11px 5px;
+
+display: flex;
+
+}
+
+.spanClass {
+
+font: 400 13px/20px Tahoma, Arial, Helvetica, sans-serif;
+
+white-space: nowrap;
+
+searchImage {
+
+margin: 2px 8 e 15px; width: 13px;
+
+height: 13px;
+
+}
+
+}
+
+.editImage (
+
+width: 15px; height: 15px;
+
+float: left;
+
+margin: 0 7px 0 0;
+
+}
+updateDetailsbutton{
+
+width: 52px;
+
+height: 16px;
+
+border-radius: 100px;
+
+background-color: #007686;
+
+color: white;
+
+border: none;
+
+font: 10px ExpertSans-Regular;
+
+margin: 3px 0px;
+
+}
+
+updateDetailsbutton:hover{ background: #005691; }
+
+updateDetailsbutton:disabled{ background: #007686; }
+
+updateDetailsbutton: disabled:hover{ background: #007686; cursor: not-allowed;
+
+}
+
+raiseRequestbutton {
+
+
+
+background: transparent; border: none;
+
+border-radius: 100px;
+
+bulkUpdatebutton {
+
+background-color: #007686; color: white;
+
+border: none;
+border-radius: 100px;
+
+float: right;
+
+height: 25px;
+
+width: 75px;
+
+font: 12px ExpertSans-Regular;
+
+.bulkUpdatebutton:hover { background: #005E91; }
+
+.downloadImage { I
+
+height: 17px;
+
+width: 16px;
+
+margin: 0 0 5px 10px;
+
+}
+
+.downloadImage:hover {
+
+-ms-transform: scale(1.2); /* IE 9 */
+
+-webkit-transform: scale(1.2); /* Safari 3-8 */
+
+transform: scale(1.2);
+
+}
+
+.arrowDown:after, .arrowUp:after {
+
+content:
+
+position: absolute;
+
+border: 6px solid transparent;
+
+}
+
+.arrowDown:after {
+
+top: 14px;
+
+border-top-color: white;
+}
+
+
+.arrowUp:after {
+
+bottom: 16px;
+
+border-bottom-color: white;
+
+}
+
+.arrowDown, .arrowUp { padding: 10px;
+
+}
+
+.requestIcon {
+
+width: 18px;
+
+height: 18px;
+
+margin: 1px 0px;
+
+transition: transform .25;
+
+File
+
+}
+
+.requestIcon:hover {
+
+-ms-transform: scale(1.2); /* IE 9 */
+
+-webkit-transform: scale(1.2); /* Safari 3-8 */
+
+transform: scale(1.2);
+
+--for laptop device-
+
+}
+
+@media screen and (max-height: 788px) {
+
+.divs { min-height: 8px limportant;
+
+max-height: 285px;
+
+}
+
+div5-mainTable (
+
+min-height: 220px limportant;
+
+max-height: 250px !important;
+
+} .div11(
+
+top: 92% limportant;
+}
+
+.div11-mainTable {
+
+ton: 580px !important:
+
+}
+
+.div11-modal-table { top: 80% !important; }
+
+/*
+
+-No Longer Used-
+
+}
+
+.select-selected {
+
+background-color: DodgerBlue;
+
+cursor: pointer;
+
+}
+
+/*style the arrow inside the select element:*/
+
+.select-selected:after {
+
+position: absolute;
+
+content: "";
+
+top: 14px;
+
+right: 10px;
+
+width: 0;
+
+height: 0;
+
+border: 6px solid transparent;
+
+border-color: #fff transparent transparent transparent;
+
+*point the arrow upwards when the select box is open (active):*/ /
+
+select-selected.select-arrow-active:after {
+
+border-color: transparent transparent #fff transparent;
+
+top: 7px;
+
+}
+
+/"style the items (options), including the selected item:"/
+
+select-items div, select-selected (
+
+color: #ffffff;.
+
+padding: 8px 16px;
+
+border: 1px solid transparent;
+
+border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+
+cursor: pointer;
+
+user-select: none:
+
+}
+
+/*style items (options):*/
+
+select-items {
+
+position: absolute;
+
+background-color: DodgerBlue;
+
+top: 100%; left: 0;
+
+right: 0;
+
+z-index: 99;
+
+}
+
+/*hide the items when the select box is closed: */
+
+select-hide
+
+}
+
+} select-items div:hover, same-as-selected ( background-color: rgba(0, 0, 0, 0.1);
+
+display: none;
+
+.div-style {
+
+border: 2px solid red;
+
+border-radius: 5px;
+
+border-color: black;
+
+}
+
+.search (
+
+width: 100%;
+
+color: #aaa;
+
+font-size: 16px;
+
+.search input {
+
+search input {
+
+background: #fcfcfc;
+
+border: 1px solid #aaa;
+
+border-radius: 5px;
+
+box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+
+}
+
+.custom-select {
+
+position: relative;
+
+font-family: Arial;
+
+}
+
+.custom-select select {
+
+display: none;
+
+/*hide original SELECT element:*/
+
+}
+
+h21 {
+
+font-family: ExpertSans-Bold;
+
+font-size: 23px;
+
+color: #00395d;
+
+letter-spacing: 0px;
+
+line-height: 24.78px;
+
+margin-left: 33px;
+
+}
+
+.alertSuccessMsg {
+
+background-color: #dffed8;
+
+color: #3c763d;
+
+border-color: #d6e9c6;
+
+text-align: center; font-weight: bold;
+
+font-size: 19px;
+
+}
+
+.alert-danger {
+
+}
+
+color: #3c763d;
+
+background-color: #dffed8;
+
+border-color: #d6e9c6;
+
+text-align: center;
+
+font-weight: bold;
+
+font-size: 19px;
+
+.alert1 {
+
+}
+
+padding: 8px;
+
+margin-bottom: 2px;
+
+border: 1px solid transparent;
+
+border-radius: 43px;
+
+jobStatustable (
+
+padding-left: 30%;
+
+border: thin;
+
+border-bottom-style: solid;
+
+border-color: black;
+
+width: 35%;
+
+font-size: 13px;
+
+.xyz {
+pointer-events: none;
+
+background-color: lightgray;
+
+}
+
+input[type=button]:focus {
+
+outline: 0 auto -webkit-focus-ring-color limportant;
+
+}
+
+tableText { .
+
+margin-left: 37%; width: 100%; height: 25%; position: fixed; top: 20%;
+
+}
+
+.fileErrorMessage {
+
+height: 10%; margin-left: 10%; top: 130px; }
+
+position: absolute;
+
+.fileErrorMessageTM {
+ height: 10%; margin-left: 38%; top: 60px;
+
+position: absolute;
+
+}
+
+toolbar1-left { 
+margin: ee02%; width: 50%; height: 25%; position: fixed; top: 0px;
+
+toolbar1-right {
+
+margin: 0 0  02%;
+ width: 50%; height: 25%; margin-left: 75%; position: fixed;
+top:0px
+}
+
+
+.fileErrorMessage {
+
+height: 10%;
+
+margin-left: 10%;
+
+top: 220px;
+
+position: absolute;
+
+}
+
+.fileTableMessage {
+
+height: 10%;
+
+margin-left: 450px;
+
+top: 140px;
+
+position: absolute;
+
+}
+
+.fileAddMessage{
+
+height: 10%;
+
+margin-left: 1070px;
+
+top: 230px;
+
+position: absolute;
+
+}
+
+.tableTextTranche {
+
+margin-left: 40%;
+
+width: 20%;
+
+height: 25%;
+
+position: fixed;
+
+top: 20%;
+
+#TrancheForm input[type=text] (
+
+width: 155px;
+
+height: 24px;
+
+padding: 5px 10px;
+
+border: 1px solid #BFBFBF;
+
+border-radius: 3px;
+
+background: #FFFFFF
+
+color: #007686;
+
+font: 12px ExpertSans-Light;
+
+
+}
+
+#TrancheForm input[type=text]:focus {
+
+border: 1px solid #007686;
+
+border-radius: 3px; background: #F2FBFE;
+
+1. font: 12px ExpertSans-Light;
+
+}
+
+color: #007686;
+
+.divBox{
+
+background: rgba(0,118,182,0.07); border: e solid rgba(0,57,93,0.14);
+
+border-radius: 2.67px;
+
+width: 585px; height: 160px;
+
+position: absolute;
+
+left: calc( (100vw 585px)/2);
+
+margin-top:calc(((100vh 263px) 310px)/2);
+
+}
+
+.divContent(
+
+width: 99%;
+
+margin-right: 5px; margin-bottom: 5px;
+
+margin-left: 5px;
+
+border: none;
+
+min-height: 475px; height: 347px;
+
+margin-top: 127px limportant;
+
+}
+
+
+
+}
+
+a.hv {
+
+} li:hover {
+
+cursor: pointer;
+
+outline: 0;
+
+font-family: ExpertSans-Regular;
+
+font-size: 11px; margin-left: 10px;
+
+line-height: 18px limportant;
+
+height: 18px;
+
+background: #EFEFEF;
+
+}
+
+
+
