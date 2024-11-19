@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS Tabs with REST API</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1>Information Portal</h1>
+    </div>
+  </header>
+
+  <div class="container" ng-controller="TabController">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button ng-click="setTab(1)" ng-class="{active: isTab(1)}">Account Info</button>
+      <button ng-click="setTab(2)" ng-class="{active: isTab(2)}">Safe Info</button>
+      <button ng-click="setTab(3)" ng-class="{active: isTab(3)}">Member Info</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content" ng-show="isTab(1)">
+      <h2>Account Info</h2>
+      <form ng-submit="fetchAccountInfo()" class="form-container">
+        <label for="accountName">Account Name:</label>
+        <input type="text" id="accountName" ng-model="accountInfo.accountName" placeholder="Enter Account Name" required>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <table ng-if="accountInfoResponse.length > 0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Account Name</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in accountInfoResponse">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.details }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-content" ng-show="isTab(2)">
+      <h2>Safe Info</h2>
+      <form ng-submit="fetchSafeInfo()" class="form-container">
+        <label for="safeName">Safe Name:</label>
+        <input type="text" id="safeName" ng-model="safeInfo.safeName" placeholder="Enter Safe Name" required>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <table ng-if="safeInfoResponse.length > 0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Safe Name</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in safeInfoResponse">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.details }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-content" ng-show="isTab(3)">
+      <h2>Member Info</h2>
+      <form ng-submit="fetchMemberInfo()" class="form-container">
+        <label for="memberName">Member Name:</label>
+        <input type="text" id="memberName" ng-model="memberInfo.memberName" placeholder="Enter Member Name" required>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <table ng-if="memberInfoResponse.length > 0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Member Name</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in memberInfoResponse">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.details }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
