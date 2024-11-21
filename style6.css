@@ -1,0 +1,201 @@
+
+avinash algamwar <avi.algamwar786@gmail.com>
+1:45 PM (2 minutes ago)
+to me
+
+/* General Body Style */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header Styling */
+header {
+  background-color: #004a7c;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #004a7c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  margin: 0 5px;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #004a7c;
+  transition: background-color 0.3s;
+}
+
+.tabs button.active {
+  background-color: #004a7c;
+  color: white;
+}
+
+.tabs button:hover {
+  background-color: #007bb5;
+  color: white;
+}
+
+/* Tab Content */
+.tab-content {
+  padding: 15px;
+}
+
+/* Form Styling */
+.form-container {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #004a7c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #007bb5;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #004a7c;
+  color: white;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+avinash algamwar <avi.algamwar786@gmail.com>
+1:27 PM (1 minute ago)
+to me
+
+/* Styling for the scrollable table container */
+.table-container {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    border: 1px solid #ddd; /* Optional border for better visibility */
+    margin-top: 10px; /* Spacing between the form and table */
+}
+
+/* Styling for the table */
+.styled-table {
+    width: 100%; /* Table should occupy the full width of the container */
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 10px 12px;
+    border: 1px solid #ddd; /* Add borders for clarity */
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Sticks to the top of the container */
+}
+
+/* Pagination controls */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination-controls button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    background-color: #009879;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination-controls span {
+    line-height: 30px;
+    font-size: 16px;
+    margin: 0 10px;
+}
