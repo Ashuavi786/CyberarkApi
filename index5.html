@@ -1,109 +1,155 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AngularJS Tabs with REST API</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacVaultAutomation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <style>
+        /* Add custom styles for the data table */
+        .data-table-container {
+            margin: 20px auto;
+            width: 90%;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .data-table th, .data-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .data-table th {
+            background-color: #f4f4f4;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .tab-content {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            background-color: #f4f4f4;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <div class="header-container">
-      <h1>Information Portal</h1>
-    </div>
-  </header>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo" style="width: 160px; position: absolute; left: 50px;">
+                <img src="images/FreddieMac.png" style="width: 100%;">
+            </div>
+            <h1>CyberArk Information Portal</h1>
+        </div>
+    </header>
 
-  <div class="container" ng-controller="TabController">
-    <!-- Tabs -->
-    <div class="tabs">
-      <button ng-click="setTab(1)" ng-class="{active: isTab(1)}">Account Info</button>
-      <button ng-click="setTab(2)" ng-class="{active: isTab(2)}">Safe Info</button>
-      <button ng-click="setTab(3)" ng-class="{active: isTab(3)}">Member Info</button>
-    </div>
+    <!-- Main Content -->
+    <div class="container" ng-controller="TabController">
+        <!-- Tabs -->
+        <div class="tabs">
+            <button ng-click="setTab(1)" ng-class="{'active': isTab(1)}">Account Info</button>
+            <button ng-click="setTab(2)" ng-class="{'active': isTab(2)}">Safe Info</button>
+            <button ng-click="setTab(3)" ng-class="{'active': isTab(3)}">Member Info</button>
+        </div>
 
-    <!-- Tab Content -->
-    <div class="tab-content" ng-show="isTab(1)">
-      <h2>Account Info</h2>
-      <form ng-submit="fetchAccountInfo()" class="form-container">
-        <label for="accountName">Account Name:</label>
-        <input type="text" id="accountName" ng-model="accountInfo.accountName" placeholder="Enter Account Name" required>
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
-      <table ng-if="accountInfoResponse.length > 0">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Account Name</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="item in accountInfoResponse">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.details }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <!-- Tab Content -->
+        <div class="tab-content" ng-show="isTab(1)">
+            <h2>Account Info</h2>
+            <form ng-submit="fetchAccountInfo()" class="form-container">
+                <label for="accountName">Account Name:</label>
+                <input type="text" id="accountName" ng-model="accountInfo.accountName" placeholder="Enter Account Name" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
 
-    <div class="tab-content" ng-show="isTab(2)">
-      <h2>Safe Info</h2>
-      <form ng-submit="fetchSafeInfo()" class="form-container">
-        <label for="safeName">Safe Name:</label>
-        <input type="text" id="safeName" ng-model="safeInfo.safeName" placeholder="Enter Safe Name" required>
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
-      <table ng-if="safeInfoResponse.length > 0">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Safe Name</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="item in safeInfoResponse">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.details }}</td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="tab-content" ng-show="isTab(2)">
+            <h2>Safe Info</h2>
+            <form ng-submit="fetchSafeInfo()" class="form-container">
+                <label for="safeName">Safe Name:</label>
+                <input type="text" id="safeName" ng-model="safeInfo.safeName" placeholder="Enter Safe Name" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+
+        <div class="tab-content" ng-show="isTab(3)">
+            <h2>Member Info</h2>
+            <form ng-submit="fetchMemberInfo()" class="form-container">
+                <label for="memberName">Member Name:</label>
+                <input type="text" id="memberName" ng-model="memberInfo.memberName" placeholder="Enter Member Name" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
     </div>
 
-    <div class="tab-content" ng-show="isTab(3)">
-      <h2>Member Info</h2>
-      <form ng-submit="fetchMemberInfo()" class="form-container">
-        <label for="memberName">Member Name:</label>
-        <input type="text" id="memberName" ng-model="memberInfo.memberName" placeholder="Enter Member Name" required>
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
-      <table ng-if="memberInfoResponse.length > 0">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Member Name</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="item in memberInfoResponse">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.details }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Data Table -->
+    <div class="data-table-container" ng-if="accountInfoResponse.length > 0">
+        <h3>Data Table</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Account Name</th>
+                    <th>Address</th>
+                    <th>Username</th>
+                    <th>Platform ID</th>
+                    <th>Safe Name</th>
+                    <th>Created Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in accountInfoResponse">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.platformId}}</td>
+                    <td>{{item.safeName}}</td>
+                    <td>{{item.createdTime}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  </div>
 
-  <footer>
-    <div class="footer-container">
-      <p>&copy; 2024 Your Company. All Rights Reserved.</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 FreddieMac. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
