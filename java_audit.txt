@@ -1,0 +1,119 @@
+
+import com.jcraft.jsch.*;
+import java.io.*;
+import java.nio.file.*;
+import java.util.zip.*;
+import java.util.*;
+
+public class FetchAndZipFiles {
+
+    public static void main(String[] args) {
+        String inputFilePath = "servers.txt"; // Path to input .txt file
+        String outputZipPath = "output/files.zip"; // Output zip location
+        String tempDir = "tempFiles"; // Temporary directory for downloaded files
+
+        try {
+            // Create temporary directory for file storage
+            Files.createDirectories(Paths.get(tempDir));
+
+            // Read the input file
+            List<String> serverDetails = Files.readAllLines(Paths.get(inputFilePath));
+
+            // Process each line
+            for (String line : serverDetails) {
+                if (line.contains("@") && line.contains(":")) {
+                    // Linux server: username@hostname:/path/to/file
+                    fetchFromLinux(line, tempDir);
+                } else if (line.startsWith("\\\\")) {
+                    // Windows server: \\hostname\path\to\file
+                    fetchFromWindows(line, tempDir);
+                } else {
+                    System.out.println("Invalid format: " + line);
+                }
+            }
+
+            // Zip the files
+            zipFiles(tempDir, outputZipPath);
+
+            // Cleanup temporary directory
+            deleteDirectory(new File(tempDir));
+            System.out.println("Process completed. Zipped file is at: " + outputZipPath);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Method to fetch files from Linux servers using SSH
+    private static void fetchFromLinux(String serverDetail, String tempDir) throws Exception {
+        String[] parts = serverDetail.split("@");
+        String username = parts[0];
+        String[] hostAndPath = parts[1].split(":");
+        String hostname = hostAndPath[0];
+        String remoteFilePath = hostAndPath[1];
+
+        System.out.println("Fetching from Linux: " + serverDetail);
+
+        JSch jsch = new JSch();
+        Session session = jsch.getSession(username, hostname, 22);
+        session.setConfig("StrictHostKeyChecking", "no");
+        session.setPassword("your_password"); // Replace with actual password or use key-based auth
+        session.connect();
+
+        Channel channel = session.openChannel("sftp");
+        channel.connect();
+        ChannelSftp sftpChannel = (ChannelSftp) channel;
+
+        String localFilePath = tempDir + "/" + Paths.get(remoteFilePath).getFileName().toString();
+        sftpChannel.get(remoteFilePath, localFilePath);
+        sftpChannel.exit();
+        session.disconnect();
+    }
+
+    // Method to fetch files from Windows servers using SMB
+    private static void fetchFromWindows(String serverDetail, String tempDir) {
+        System.out.println("Fetching from Windows: " + serverDetail);
+        try {
+            String remoteFilePath = serverDetail;
+            String localFilePath = tempDir + "/" + Paths.get(remoteFilePath).getFileName().toString();
+
+            InputStream in = new FileInputStream(remoteFilePath);
+            Files.copy(in, Paths.get(localFilePath), StandardCopyOption.REPLACE_EXISTING);
+            in.close();
+        } catch (IOException e) {
+            System.out.println("Failed to fetch from Windows: " + serverDetail);
+            e.printStackTrace();
+        }
+    }
+
+    // Method to zip files in a directory
+    private static void zipFiles(String sourceDir, String zipFilePath) throws IOException {
+        try (ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(zipFilePath))) {
+            Files.walk(Paths.get(sourceDir)).filter(Files::isRegularFile).forEach(path -> {
+                try {
+                    ZipEntry zipEntry = new ZipEntry(path.toString().substring(sourceDir.length() + 1));
+                    zos.putNextEntry(zipEntry);
+                    Files.copy(path, zos);
+                    zos.closeEntry();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
+    // Utility method to delete a directory recursively
+    private static void deleteDirectory(File directory) {
+        File[] files = directory.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    deleteDirectory(file);
+                } else {
+                    file.delete();
+                }
+            }
+        }
+        directory.delete();
+    }
+}
