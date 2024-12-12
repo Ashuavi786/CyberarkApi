@@ -1,173 +1,154 @@
+<div class="div7"s
+
+<div>
+
+<label class="lable2">Download Entire Report</label>
+
+<input title="Download the Report as csv file" type="image" src="images/download FontAwesome@tx.png"
+
+alt="Click here download" class="downloadImage" ng-model-"year"
+
+ng-click="downloadReport()" />
+
+</div>
+
+</div>
+
+<div class="divs" id="divs">
+
+<div class="div10">
+
+<label class="lable3">Items per page:</label> <select
+
+class="select5" ing-changes"limitChange(itemPerPage)" data-ng-model-"itemperPage" id="itemPage">
+
+<option value="20" selected>28</option>
+
+<option value="50">50</option>
+
+<option value="70">70</option>
+
+<option value="100">100</option>
+
+</select>
+
+</div>
+
+uib-pagination class="pagination-sm pagination" <
+
+total-items-"filterData.length"
+
+ng-model-"page" items-per-page-"itemPerPage" max-size-maxSize" boundary-link-numbers-"true" rotate="false"> </uib-pagination>
+
+</div>
+
+<div ng-show-"div11" class="div11" id="divil" style="display: none;">
+
+</div>
+
+<div class="div12">
+
+<div>
+
+<label class="lable2">Download Entire Report</label>
+
+<input title "Download the Report as csv file" type "image" src="images/download FontAwesome@1x.png" alt="Click here download" class="downloadImage" ng-model "year"
+
+ng-click="downloadReportForOracle()" />
+
+</div>
+
+</div>
+
+<div class="div13" id "div13">
+
+<div class="div14">
+
+<label class="lable3">Items per page:</label> <select
+
+class="selects" ng-change-"limitChange(itemPerPage)"
+
+data-ng-model-"itemPerPage" id="itemPage">
 
 
-<!DOCTYPE html>
-<html lang="en" ng-app="myApp">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database Permissions</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="js/app.js"></script>
-    <style>
-        /* General styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+class="select5" ng-change="limitChange(itemPerPage)"
 
-        .container {
-            width: 90%;
-            margin: 20px auto;
-        }
+data-ng-model-"itemPerPage" id="itemPage">
 
-        /* Header styling */
-        header {
-            background-color: #003366;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+<option value="20" selected>20</option>
 
-        header img {
-            height: 50px;
-        }
+<option value="50">50</option>
 
-        header h1 {
-            font-size: 20px;
-            margin: 0;
-        }
+<option value="70">70</option>
 
-        /* Form styling */
-        .form-container {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+<option value="100">100</option>
 
-        .form-container label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
+</select>
 
-        .form-container input[type="text"],
-        .form-container button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+</div>
 
-        .form-container button {
-            background-color: #003366;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+<uib-pagination class="pagination-sm pagination"
 
-        .form-container button:hover {
-            background-color: #0055a5;
-        }
+total-items="filterData.length"
 
-        /* Table styling */
-        .data-table-container {
-            overflow-x: auto;
-        }
+ng-model-"page" items-per-page="itemPerPage" max-size-"maxSize"
 
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+</div>
 
-        .data-table th,
-        .data-table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
+boundary-link-numbers="true" rotate="false"> </uib-pagination>
 
-        .data-table th {
-            background-color: #003366;
-            color: white;
-        }
-    </style>
-</head>
+</div>
 
-<body ng-controller="PermissionController">
-    <!-- Header -->
-    <header>
-        <div>
-            <img src="images/BarclaysLogo.png" alt="Barclays Logo">
-        </div>
-        <h1>Database Permissions Portal</h1>
-    </header>
+<div id="alertDialog" class="modal">
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Form Section -->
-        <div class="form-container">
-            <h2>Check All Database Permissions</h2>
-            <form ng-submit="fetchPermissions()">
-                <label>Database Type:</label>
-                <label>
-                    <input type="radio" ng-model="formData.databaseType" value="Oracle" required> Oracle
-                </label>
-                <label>
-                    <input type="radio" ng-model="formData.databaseType" value="MS_SQL"> MS_SQL
-                </label>
+<div class="modal-content2" ng-class="alert Theme" >
 
-                <label for="hostName">Host Name:</label>
-                <input type="text" id="hostName" ng-model="formData.hostName" placeholder="Enter Host Name" required>
+<div class="modal-header2">
 
-                <label for="accountName">Account Name:</label>
-                <input type="text" id="accountName" ng-model="formData.accountName" placeholder="Enter Account Name" required>
+<button type="button" class="close" data-dismiss="modal"
 
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+title="Close">
 
-        <!-- Data Table Section -->
-        <div class="data-table-container" ng-if="permissionsData.length > 0">
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Account ID</th>
-                        <th>Database Name</th>
-                        <th>Instance Name</th>
-                        <th>Role Name</th>
-                        <th>Object Owner</th>
-                        <th>Object Name</th>
-                        <th>Object Permission</th>
-                        <th>Object ID</th>
-                        <th>System Permission</th>
-                        <th>Permission Level</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="item in permissionsData">
-                        <td>{{ item.accountId }}</td>
-                        <td>{{ item.databaseName }}</td>
-                        <td>{{ item.instanceName }}</td>
-                        <td>{{ item.roleName }}</td>
-                        <td>{{ item.objectOwner }}</td>
-                        <td>{{ item.objectName }}</td>
-                        <td>{{ item.objectPermission }}</td>
-                        <td>{{ item.objectId }}</td>
-                        <td>{{ item.systemPermission }}</td>
-                        <td>{{ item.permissionLevel }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</body>
+<img src="images/ion-close copy 2@2x.svg" class="closeModalImg" />
 
-</html>
+</button>
+
+</div>
+
+<div class="modal-body2">
+
+<div>
+
+<img src="{{alert Image}}"
+
+style="width: 3.5%; margin-right: 2%; margin-down: 4%;height: 16px;" />{(alertMessage))
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="errorDialogi" class="modal" data-backdrop-"static"
+
+data-keyboard-"false" style-"z-index: 1051"> <div class="modal-content2" ng-class-"alert Theme">
+
+<div class="modal-body2">
+
+<div>
+
+<img src="{{alertImage}}"
+
+style="width: 3.5%; margin-right: 2%; height: 16px;" />([alertMessage}}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
