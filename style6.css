@@ -1,37 +1,43 @@
-/* Loader Styles */
-.loader-container {
+.pagination-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    height: 100px;
-    margin: 20px 0;
+    margin-top: 15px;
 }
 
-.loader {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #3498db;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    animation: spin 1s linear infinite;
+.pagination-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.pagination-container button[ng-disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
-/* Alert Styles */
-.alert-container {
-    text-align: center;
-    margin: 20px 0;
+.pagination-container span {
+    font-size: 14px;
+    margin: 0 10px;
 }
 
-.alert {
-    color: #d9534f;
-    font-size: 16px;
-    background-color: #f8d7da;
-    padding: 10px;
-    border: 1px solid #f5c6cb;
-    border-radius: 4px;
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.styled-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
 }
