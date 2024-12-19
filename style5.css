@@ -1,61 +1,79 @@
-/* Backdrop for the dialog */
-.dialog-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dim the background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-/* Dialog box */
-.dialog-box {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    max-width: 90%;
-    padding: 20px;
-    animation: fadeIn 0.3s;
-    position: relative;
+/* Overlay Styling */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
-/* Dialog header */
-.dialog-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 10px;
+/* Alert Box Styling */
+.alert-box {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  padding: 20px;
+  z-index: 1000;
+  position: relative;
 }
 
-/* Dialog content */
-.dialog-content {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Close button */
+/* Close Button Styling */
 .close-btn {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #444;
 }
 
-/* Fade-in animation for the dialog */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.close-btn:hover {
+  color: #007bff;
+}
+
+/* Alert Content Styling */
+.alert-box img {
+  width: 40px;
+  height: 40px;
+}
+
+.alert-box .message {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* OK Button Styling */
+.alert-box .action-btn {
+  margin-top: 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.alert-box .action-btn:hover {
+  background-color: #0056b3;
 }
