@@ -1,6 +1,25 @@
-.download-container {
+
+avinash algamwar <avi.algamwar786@gmail.com>
+2:54 PM (0 minutes ago)
+to me
+
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 15px;
-    text-align: right; /* Align the download button to the right */
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spacing between buttons */
+}
+
+.download-controls {
+    text-align: right;
 }
 
 .download-btn {
@@ -16,3 +35,9 @@
 
 .download-btn:hover {
     background-color: #45a049;
+}
+
+button[ng-disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
