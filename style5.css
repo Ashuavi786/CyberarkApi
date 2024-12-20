@@ -1,79 +1,18 @@
-/* General Body Styling */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+.download-container {
+    margin-top: 15px;
+    text-align: right; /* Align the download button to the right */
 }
 
-/* Overlay Styling */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Alert Box Styling */
-.alert-box {
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  width: 300px;
-  text-align: center;
-  padding: 20px;
-  z-index: 1000;
-  position: relative;
-}
-
-/* Close Button Styling */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #444;
-}
-
-.close-btn:hover {
-  color: #007bff;
-}
-
-/* Alert Content Styling */
-.alert-box img {
-  width: 40px;
-  height: 40px;
-}
-
-.alert-box .message {
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #444;
-}
-
-/* OK Button Styling */
-.alert-box .action-btn {
-  margin-top: 15px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.alert-box .action-btn:hover {
-  background-color: #0056b3;
-}
+.download-btn:hover {
+    background-color: #45a049;
