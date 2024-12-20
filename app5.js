@@ -1,64 +1,39 @@
-// Define AngularJS module and controller
-var app = angular.module('myApp', []);
 
-app.controller('TabController', function($scope, $http) {
-    // Manage tabs
-    $scope.activeTab = 1;
+avinash algamwar <avi.algamwar786@gmail.com>
+1:53 PM (1 minute ago)
+to me
 
-    $scope.setTab = function(tab) {
-        $scope.activeTab = tab;
-    };
+$scope.downloadData = function () {
+    if (!$scope.memberInfoResponse || $scope.memberInfoResponse.length === 0) {
+        alert('No data to download.');
+        return;
+    }
 
-    $scope.isTab = function(tab) {
-        return $scope.activeTab === tab;
-    };
+    // Convert data to CSV
+    const csvHeader = [
+        'SafeUrlId,SafeName,SafeNumber,MemberId,MemberName,MemberType,MembershipExpirationDate,ExpiredMembershipEnable',
+    ];
+    const csvRows = $scope.memberInfoResponse.map((member) => {
+        return [
+            member.safeUrlId,
+            member.safeName,
+            member.safeNumber,
+            member.memberId,
+            member.memberName,
+            member.memberType,
+            member.membershipExpirationDate || 'Null',
+            member.isExpiredMembershipEnable,
+        ].join(','); // Join values with a comma
+    });
 
-    // Models to hold form inputs
-    $scope.accountInfo = {};
-    $scope.safeInfo = {};
-    $scope.memberInfo = {};
+    const csvContent = csvHeader.concat(csvRows).join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
 
-    // Models to hold API responses
-    $scope.accountInfoResponse = [];
-    $scope.safeInfoResponse = [];
-    $scope.memberInfoResponse = [];
-
-    // Function to fetch Account Info
-    $scope.fetchAccountInfo = function() {
-        const apiUrl = 'https://api.example.com/account-info'; // Replace with your backend URL
-        $http.post(apiUrl, $scope.accountInfo)
-            .then(function(response) {
-                $scope.accountInfoResponse = response.data; // Bind data to table
-            })
-            .catch(function(error) {
-                console.error('Error fetching account info:', error);
-                alert('Failed to fetch account info.');
-            });
-    };
-
-    // Function to fetch Safe Info
-    $scope.fetchSafeInfo = function() {
-        const apiUrl = 'https://api.example.com/safe-info'; // Replace with your backend URL
-        $http.post(apiUrl, $scope.safeInfo)
-            .then(function(response) {
-                $scope.safeInfoResponse = response.data; // Bind data to table
-            })
-            .catch(function(error) {
-                console.error('Error fetching safe info:', error);
-                alert('Failed to fetch safe info.');
-            });
-    };
-
-    // Function to fetch Member Info
-    $scope.fetchMemberInfo = function() {
-        const apiUrl = 'https://api.example.com/member-info'; // Replace with your backend URL
-        $http.post(apiUrl, $scope.memberInfo)
-            .then(function(response) {
-                $scope.memberInfoResponse = response.data; // Bind data to table
-            })
-            .catch(function(error) {
-                console.error('Error fetching member info:', error);
-                alert('Failed to fetch member info.');
-            });
-    };
-});
+    // Trigger the download
+    const downloadLink = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    downloadLink.href = url;
+    downloadLink.download = 'MemberInfo.csv';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
