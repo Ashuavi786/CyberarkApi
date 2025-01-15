@@ -1,0 +1,93 @@
+
+
+### Global Variables ###
+$run_time = (Get-Date).ToString("MM-dd-yyyy")
+$BaseURI = "https://cyberarknonprod.fhimc.com"
+$PVWA_URL = "$BaseURI/PasswordVault"
+$URL_Logon = "$PVWA_URL/api/auth/cyberark/logon"
+$URL_ListApp = "$PVWA_URL/WebServices/PIMServices.svc/Applications?Location=&IncludeSublocations=true"
+$URL_Logoff = "$PVWA_URL/API/Auth/Logoff"
+$Path = "E:\Healthcheck"
+
+### Skip SSL/TLS Verification ###
+Add-Type -TypeDefinition @"
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+public class TrustAllCertsPolicy : ICertificatePolicy {
+    public bool CheckValidationResult(ServicePoint srvPoint, X509Certificate certificate, WebRequest request, int certificateProblem) {
+        return true;
+    }
+}
+"@
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+### Logon ###
+Write-Output "Logging in to CyberArk..."
+$logonBody = @{
+    username = "Pasteporter"
+    password = "$(Invoke-RestMethod -Method GET -Uri 'https://ccpnp.fhlmc.com/AIMwebservice/api/Accounts?AppID=CCP-NP-TEST&Safe=AW37 CyberArk-Local NP&Folder=root&Object=Application')"
+} | ConvertTo-Json -Depth 2
+
+try {
+    $logonResult = Invoke-RestMethod -Method Post -Uri $URL_Logon -Body $logonBody -ContentType "application/json"
+    $logonToken = $logonResult
+    if (-not $logonToken) {
+        Write-Host "Logon Token is empty. Cannot login." -ForegroundColor Red
+        exit
+    }
+    $logonHeader = @{
+        Authorization = $logonToken
+    }
+} catch {
+    Write-Error "Failed to log in: $($_.Exception.Response.StatusDescription)"
+    exit
+}
+
+### Fetch Application Details ###
+Write-Output "Fetching Application Details..."
+try {
+    $appResponse = Invoke-RestMethod -Method Get -Uri $URL_ListApp -Headers $logonHeader -ContentType "application/json"
+    $applications = $appResponse | Select-Object -ExpandProperty Application
+} catch {
+    Write-Error "Failed to fetch application details: $($_.Exception.Response.StatusDescription)"
+    exit
+}
+
+### Fetch Application Authentication Details ###
+Write-Output "Fetching Application Authentication Details..."
+foreach ($app in $applications) {
+    $AppID = $app.AppID
+    $authURL = "$PVWA_URL/WebServices/PIMServices.svc/Applications/$AppID/Authentications"
+    try {
+        $authResponse = Invoke-RestMethod -Method Get -Uri $authURL -Headers $logonHeader -ContentType "application/json"
+        $authDetails = $authResponse | Select-Object -ExpandProperty Authentication | Select-Object `
+            AppID, AuthType, AuthValue, AllowInternalScripts, Comment, IsFolder, AuthID
+        if ($authDetails) {
+            $authDetails | Export-Csv "$Path\NonProduction_AppAuthReport-$run_time.csv" -NoTypeInformation -Append
+        } else {
+            Write-Output "No authentication details found for AppID: $AppID"
+            $nullEntry = [PSCustomObject]@{
+                AppID = $AppID
+                AuthType = "None"
+                AuthValue = "None"
+                AllowInternalScripts = $false
+                Comment = "No Auth Details"
+                IsFolder = $false
+                AuthID = "None"
+            }
+            $nullEntry | Export-Csv "$Path\NonProduction_AppAuthReport-$run_time.csv" -NoTypeInformation -Append
+        }
+    } catch {
+        Write-Error "Failed to fetch authentication details for AppID $AppID: $($_.Exception.Response.StatusDescription)"
+    }
+}
+
+### Logoff ###
+Write-Output "Logging off the session..."
+try {
+    Invoke-RestMethod -Method Post -Uri $URL_Logoff -Headers $logonHeader -ContentType "application/json"
+    Write-Output "Session logged off successfully."
+} catch {
+    Write-Error "Failed to log off the session: $($_.Exception.Response.StatusDescription)"
+}
